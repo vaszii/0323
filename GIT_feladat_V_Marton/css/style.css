@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;0,600;0,700;1,300&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-image: url(../img/body-bg.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/*A navigáció formázása ide kerüljön!*/
+
+nav>ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+}
+
+nav ul i {
+    background-color: rgb(5, 25, 35);
+    
+    padding: .1rem .3rem;
+    color: #fff;
+}
+
+nav ul {
+    list-style-type: disc;
+}
+
+nav ul a {
+    text-decoration: none;
+    display: inline-block;
+    
+    padding: .7rem;
+    
+}
+
+nav ul a:hover {
+    background-color: rgba(5, 25, 35, 1);
+}
+
+
+/*Almenü*/
+
+nav ul ul {
+    position: absolute;
+    list-style-type: none;
+    z-index: 2;
+}
+
+nav ul ul li a {
+    display: none;
+    background-color: rgba(0, 100, 148, 1);
+}
+
+nav ul ul li {
+    height: 0;
+    opacity: 0;
+    transition: height 0.3s, opacity 0.2s;
+    transform: translateX(-2rem);
+}
+
+nav ul li:hover ul li {
+    height: 3rem;
+    opacity: 1;
+}
+
+nav ul li:hover ul li a {
+    display: inline-block;
+    width: 20rem;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 5rem;
+    padding: .5rem;
+    background-color: rgb(5, 25, 35);
+}
+
+header h1 {
+    color: #fff;
+    letter-spacing: .5rem;
+
+
+}
+
+#linus {
+    max-width: 25rem;
+    border-radius: 50%;
+
+    margin: .5rem;
+}
+
+
+/*Seciton*/
+
+.sectionRow {
+    max-width: 1400px;
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: end;
+    gap: 4rem
+}
+
+.sectionRow .card {
+    border-radius: 0;
+    border-width: 3px;
+    border-top-color: #fff;
+    border-bottom-color: #fff;
+    border-right-color: #fff;
+    
+}
+
+.card2,
+.card3 {
+    margin-top: -2rem
+}
+
+.myCard {
+    border-color: rgb(0, 100, 148);
+}
+
+.myCard .card-body, .vsc .card, .repository .card{
+    background-color: rgb(0, 100, 148);
+    color: #fff;
+}
+.row2 .card{
+    border-color: #fff;
+}
+
+.cardsCLI, .cardsVSC, .cardsRepo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.cardsCLI .card{
+    max-width: 24rem;
+}
+.cardsVSC .pic, .repository .pic{
+    margin:.5rem;
+}
+.cardsVSC img, .repository img{
+    max-width: 400px;
+}
+.cardsRepo{
+    align-items: center;
+}
+
+footer{
+    background-color: rgb(5, 25, 35);
+    padding: 1rem;
+}
+footer p{
+    text-align: center;
+    margin: 0;
+}
+footer a{
+    text-decoration: none;
+    color: #fff;
+}
+
+
+@media (max-width:1187px){
+    .cardsCLI, .cardsVSC, .cardsRepo{
+        justify-content: center;
+    }
+}
+
+/*A 10. feladatot itt készítsd el!*/
+
+@media (max-width:1419px) {
+    header {
+        padding-bottom: 3rem;
+    }
+}
+
+@media (max-width:420px) {
+    #linus {
+        max-width: 18rem;
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+
+
+/*Colours:
+ 0, 166, 251
+
+ 5, 130, 202
+
+ 0, 100, 148
+
+ 0, 53, 84
+
+ 5, 25, 35
+ */

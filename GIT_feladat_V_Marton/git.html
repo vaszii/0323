@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="hu">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="./img/Git-Icon-Black.png"
+            type="image/png">
+        <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+        <link st rel="stylesheet"
+            href="./bootstrap-5.3.0-alpha1-dist/css/bootstrap.css">
+        <title>Git verziókezelő rendszer</title>
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+
+    <body>
+        <nav>
+            <ul>
+                <i class="bi bi-git"></i>
+                <li><a href="#git">Git jelentősége</a></li>
+                <li><a href="#install">Telepítése</a></li>
+                <li><a href="#short">Röviden a GIT-ről</a></li>
+                <li><a href="#command">Parancssor</a>
+                    <ul>
+                        <li><a href="#inti">Inicializálás</a></li>
+                        <li><a href="#conf">Konfigurálás</a></li>
+                        <li><a href="#com">Alap parancsok</a></li>
+                    </ul>
+
+                </li>
+                <li><a href="#VSC">VS Code</a></li>
+                <li><a href="#repo">Repository</a>
+                    <ul>
+                        <li><a href="#loc">Local repository</a></li>
+                        <li><a href="#rem">Remote repository</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+        </nav>
+
+        <header>
+            <img src="./img/Linus-Torvald.jpg" alt="Linus-Torvald"
+                title="Linus-Torvald">
+            <h1>GIT verziókezelő rendszer</h1>
+        </header>
+        <!--Az első három kiskártya a header alatt ******************************-->
+        <section>
+            <div class="sectionRow">
+                <div class="sectionCol">
+                    <div class="card card1" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Linus Torvalds</h5>
+                            <p class="card-text">A GIT-et még Linus Torvalds
+                                kezdte el fejleszteni a Linux kernel
+                                fejlesztéséhez, mert 2005-ben nem volt olyan
+                                ingyenesen használható verziókezelő rendszer,
+                                amely elég gyors lett volna.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sectionCol">
+                    <div class="card card2" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Verziókezelő</h5>
+                            <p class="card-text">A Git egy nyílt forráskódú,
+                                elosztott verziókezelő szoftver, vagy másképpen
+                                egy szoftverforráskód-kezelő rendszer, amely a
+                                sebességre helyezi a hangsúlyt. A GIT Windows
+                                változatának karbantartásáért a Microsoft felel.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sectionCol">
+                    <div class="card card3" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Igen elterjedt</h5>
+                            <p class="card-text">Számos nagy volumenű projekt
+                                használja; a legfontosabbak ezek közül:
+                                Linux-rendszermag, Samba, MediaWiki, VLC media
+                                player, Ruby on Rails és az Android platform. A
+                                Git karbantartásának felügyeletét jelenleg Junio
+                                Hamano látja el.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <main>
+            <!--A GIT jelentősége (1.row) ***************************************************-->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col mt-4">
+                        <div class="card myCard">
+                            <div class="card-body">
+                                <h5 id="git" class="card-title">A GIT
+                                    jelentősége</h5>
+                                <p class="card-text">A verziókezelés nem más,
+                                    mint amikor projektünk egy állapotáról,
+                                    amihez egy címkét is illeszthetünk (nem
+                                    kötelező címkét hozzárendelni), készítünk
+                                    egy mentést, hogy ha szükséges lenne,
+                                    egyszerűen vissza tudjunk állni arra az
+                                    állapotra, arra a verzióra. A GIT ebben
+                                    nyújt nekünk segítséget.</p>
+                                <ul>
+                                    <li>Mindig tudjuk, melyik a forráskód
+                                        legfrissebb verziója. Akkor is, ha
+                                        egyszerre nagyon sokan dolgoznak rajta.</li>
+                                    <li>Több verziót is karban tudunk tartani.
+                                        Például egy fejlesztői, egy tesztelési,
+                                        valamint egy éles használatra kiadott
+                                        verziót. És akkor sem lesz káosz, ha az
+                                        éles verzión gyorsan ki kell valamit
+                                        javítani, amit aztán később
+                                        nyilván a fejlesztői és tesztelői
+                                        verziókba is át kell venni.</li>
+                                    <li>Bármikor vissza tudunk térni korábbi
+                                        verziókhoz. Péládul ha a nagy bemutató
+                                        előtt 4 órával hirtelen semmi nem
+                                        működik, akkor a pánikhangulat helyett
+                                        bármikor vissza lehet térni egy korábban
+                                        agyontesztelt verzióhoz, mely
+                                        ugyan nem tud még mindent, de akkor
+                                        legalább működött.</li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--A GIT telepítése (2.row) ***************************************************-->
+                <div class="row row2">
+                    <div class="col col-lg-4 col-md-6 mb-4">
+                        <div class="card">
+
+                            <div class="card-body">
+                                <h5 class="card-title" id="install">Git
+                                    telepítése</h5>
+                                <p class="card-text">Telepítése rendkívül egyszerű. A <a href="https://git-scm.com/" target="_blank" style="color: black;"></a> https://git-scm.com/ oldalról le
+                                    kell tölteni az operációs rendszerhez illeszkedő változatot, és az alapértelmezett beállításokat elfogadva installálni.</p>
+                                <p>Egyedül az alapértelmezett szövegszerkesztőnél ajánlott egy, a vim helyett egy kezdők számára, könnyebben kezelhető változatot kijelölni.</p>
+                                <img src="./img/install.png" class="card-img-bottom" alt="Szövegszerkesztő" title="Szövegszerkesztő">
+                            </div>
+                        </div>
+                    </div>
+                    <!--A GIT-nek 3 fő oszlopa van**********************************************-->
+                    <div class="col-12 col-lg-12">
+
+                        <div class="card mt-4">
+
+                            <div id="loc" class="card-body">
+                                <h5 id="short" class="card-title">A GIT-nek 3 fő
+                                    oszlopa
+                                    van</h5>
+                                <p class="card-text">A munkakönyvtár (<strong>working
+                                        directory</strong>) – Ez az a könyvtár,
+                                    amely a projektünket tartalmazza, annak
+                                    aktuális állapotát. Ez egy teljesen
+                                    hagyományos könyvtár, GIT-től független.
+                                    <p class="card-text">
+                                        <b>Verzió napló</b> (<b>STAGE</b>) –
+                                        Ebben tartjuk nyilván, hogy az adott
+                                        (aktuális) verzióban milyen fájlok,
+                                        milyen tartalommal szerepelnek. Ez a
+                                        napló egy szöveges fájl.
+                                    </p>
+                                    <p class="card-text">Mentett verziók (<strong>local
+                                            repository</strong>) – Itt található
+                                        az összes mentett állapot (verzió),
+                                        amelyek közül szükség esetén vissza is
+                                        térhetünk.</p>
+                                </div>
+
+                            </div>
+                            <!--Inicializálás, konfiguráció, alap parancsok *****************************-->
+                            <div id="command" class="cardsCLI">
+                                <div class="card mt-3">
+                                    <img src="./img/git_init.png"
+                                        class="card-img-top" alt="git init
+                                        parancs" title="git init parancs">
+                                    <div class="card-body">
+                                        <h5 id="init" class="card-title">Inicializálás</h5>
+                                        <p class="card-text">A GIT telepítésével
+                                            a Git BASH parancsértelmező is a
+                                            gépünkre került. Ajánlott belépni a
+                                            munka könyvtárba, a helyi menüből
+                                            elindítani a BASH-t. Ezután ki kell
+                                            adnunk a „git init” parancsot. A
+                                            parancs előkészíti a könyvtárunkat a
+                                            GIT használatára. Létrejön a <b>.git</b>
+                                            rejtett könyvtár.</p>
+                                    </div>
+                                </div>
+                                <div class="card mt-3">
+                                    <img src="./img/git_config.png"
+                                        class="card-img-top" alt="A git
+                                        konfigurációs parancsa" title="A git
+                                        konfigurációs parancsa">
+                                    <div class="card-body">
+                                        <h5 id="conf" class="card-title">Konfiguráció</h5>
+                                        <p class="card-text">Mielőtt még
+                                            használni kezdenénk a GIT-et meg
+                                            kell tennünk pár beállítást:</p>
+                                        <p class="card-text">
+                                            <b>git config –global user.name
+                                                „saját
+                                                nevünk”</b><br>
+                                            <b>git config –global user.email
+                                                „saját
+                                                email címünk”</b>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="card mt-3">
+                                    <img src="./img/git_add_commit.png"
+                                        class="card-img-top" alt="Alap
+                                        parancsok" title="Alap parancsok">
+                                    <div class="card-body">
+                                        <h5 id="com" class="card-title">Alap
+                                            parancsok</h5>
+                                        <p class="card-text">Amikor elkészültünk
+                                            egy részfeladattal, akkor a <b>git
+                                                add fájlnév</b> révén felvesszük
+                                            a fájlokat a verziónaplóba.<br>A <b>git
+                                                commit -m "Üzenet" fájlnév</b>
+                                            révén pedig létrejön egy verzió a
+                                            projektünkről.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="vsc">
+                    <!--A Visual Studio Code és a GIT (3.row) ***************************************************-->
+                    <div class="row">
+                        <div class="col">
+                            <div class="card mt-3">
+                                <div class="card-body">
+                                    <h5 id="VSC" class="card-title">A Visual
+                                        Studio Code és a GIT</h5>
+                                    <p class="card-text">A Visual Studio Code
+                                        program némileg egyszerűbbé teszi a git
+                                        használatát. A GIT eszköztára az ablak
+                                        bal oldalán található <b>Source control</b>
+                                        ikonra kattintva érhető el.</p>
+                                    <p class="card-text">Eőször felkínálja az
+                                        adott könyvtár inicializálását. Az add
+                                        parancsot a + jellel adhatjuk ki. A
+                                        commit parancs jele egy pipa, a
+                                        parancshoz tartozó message helye pedig a
+                                        pipa alatti beviteli mező.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardsVSC mt-3">
+                        <div class="pic">
+                            <img src="./img/VSC_init.png" alt="VS Code init"
+                                title="VS Code init" class="vscPicture">
+                        </div>
+                        <div class="pic">
+                            <img src="./img/VSC_commandPalette.png" alt="Command
+                                palette" title="Command palette"
+                                class="vscPicture">
+                        </div>
+                        <div class="pic">
+                            <img src="./img/VSC_add.png" alt="VS Code add"
+                                title="VS Code add" class="vscPicture">
+                        </div>
+                        <div class="pic">
+                            <img src="./img/VSC_commit.png" alt="VS Code commit"
+                                title="VS Code commit" class="vscPicture">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="rem" class="repository">
+                    <!--Local és remote repository(4.row) ************************************************-->
+                    <div class="row">
+                        <div class="col">
+                            <div class="card mt-3">
+                                <div class="card-body">
+                                    <h5 id="repo" class="card-title">Local és
+                                        remote repository</h5>
+                                    <p class="card-text">A GIT verziókezelő
+                                        rendszer lehetővé teszi, hogy a helyi
+                                        gépen lévő repositoryt feltöltsük egy
+                                        távoli szerverre. Ezt hívjuk remote
+                                        repositorynak.</p>
+                                    <p class="card-text">Emellett ezt a távoli
+                                        repositoryt képes több felhasználóval is
+                                        megosztani, hogy azt közösen használják.
+                                        A változtatásokat szinkronizálhatjuk, és
+                                        így a GIT megteremti a <strong>csapatmunka</strong>
+                                        lehetőségét is.</p>
+                                    <p class="card-text">
+                                        Javasolt, hogy a helyi tárolót a távoli
+                                        tároló klónozásával hozzuk létre a <b>git
+                                            clone url-cím</b> paranccsal. Így
+                                        minden beállításra kerül a háttérben.
+                                        Ezután már egyszerűen használhatjuk a
+                                        <b>git pull</b> parancsot a
+                                        szinkronizáláshoz, illetve a <b>git push</b>
+                                        parancsot a fájlok feltöltéséhez.</p>
+                                    <p class="card-text">
+                                        Visual Studio Code-ban ezt az utóbbi két
+                                        parancsot a Sync Changes gombra
+                                        kattintva valósíthatjuk meg.<br>Ezeket a
+                                        műveleteket mutatják be az alábbi képek:
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cardsRepo mt-3">
+                        <div class="pic">
+                            <img src="./img/gitHub_copy.png" alt="GitHub code
+                                copy" title="GitHub code copy"
+                                class="vscPicture">
+                        </div>
+                        <div class="pic">
+                            <img src="./img/git_clone.webp" alt="git clone
+                                command" title="git clone command"
+                                class="vscPicture">
+                        </div>
+                        <div class="pic">
+                            <img src="./img/VSC_clone.png" alt="VS Code git
+                                clone" title="VS Code git clone"
+                                class="vscPicture">
+                        </div>
+                        <div class="pic">
+                            <img src="./img/VSC_pull_push__sync.png"
+                                alt="Szinkronizálás" title="Szinkronizálás"
+                                class="vscPicture">
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+            <footer>
+                <p><a
+                        href="https://bmeaut.github.io/snippets/snippets/0126_GitBev/"
+                        target="_blank">Ezzel kapcsolatban javasolt olvasnivaló</a></p>
+            </footer>
+
+
+            <script
+                src="./bootstrap-5.3.0-alpha1-dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+
+    </html>

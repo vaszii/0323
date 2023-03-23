@@ -1,0 +1,6 @@
+Cím: A GIT telepítése
+Két bekezdése:
+Telepítése rendkívül egyszerű. A https://git-scm.com/ oldalról le kell tölteni az operációs
+rendszerhez illeszkedő változatot, és az alapértelmezett beállításokat elfogadva installálni.
+
+Egyedül az alapértelmezett szövegszerkesztőnél ajánlott egy, a vim helyett egy kezdők számára, könnyebben kezelhető változatot kijelölni.
